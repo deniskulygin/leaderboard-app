@@ -1,0 +1,142 @@
+{
+    "description": "Success response",
+    "content": {
+        "application/json": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "Activity unique ID"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "Team name"
+                                },
+                                "step_count": {
+                                    "type": "integer",
+                                    "description": "Total team users` steps count"
+                                },
+                                "created": {
+                                    "type": "integer",
+                                    "description": "Timestamp when team was created"
+                                },
+                                "updated": {
+                                    "type": "integer",
+                                    "description": "Timestamp when team was updated"
+                                }
+                            }
+                        }
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "pagination": {
+                                "type": "object",
+                                "properties": {
+                                    "total": {
+                                        "type": "integer",
+                                        "description": "Total result items"
+                                    },
+                                    "count": {
+                                        "type": "integer",
+                                        "description": "Displayed items count"
+                                    },
+                                    "per_page": {
+                                        "type": "integer",
+                                        "description": "Results per page"
+                                    },
+                                    "current_page": {
+                                        "type": "integer",
+                                        "description": "Current results page"
+                                    },
+                                    "total_pages": {
+                                        "type": "integer",
+                                        "description": "Total results page"
+                                    },
+                                    "links": {
+                                        "type": "object",
+                                        "properties": {
+                                            "next": {
+                                                "type": "string",
+                                                "description": "Next page link"
+                                            },
+                                            "previous": {
+                                                "type": "string",
+                                                "description": "Previous page link"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "data": [
+                        {
+                            "id": "88d2ecf7f97b4a98be0f31ecb23138cc91ee2535",
+                            "name": "Test team",
+                            "step_count": 12004,
+                            "created": 1714343894,
+                            "updated": 1714343894
+                        },
+                        {
+                            "id": "fcb50dedbb6d472cb71f790e87fc66ad5df939c3",
+                            "name": "Test team",
+                            "step_count": 0,
+                            "created": 1715295822,
+                            "updated": 1715295822
+                        },
+                        {
+                            "id": "0c646be1e2e04dcfb8fc23ea96b8b5b8370366f2",
+                            "name": "Test team",
+                            "step_count": 0,
+                            "created": 1715295823,
+                            "updated": 1715295823
+                        },
+                        {
+                            "id": "0276066d046842b491fba0bb444132f990111e92",
+                            "name": "Test team",
+                            "step_count": 0,
+                            "created": 1715295824,
+                            "updated": 1715295824
+                        },
+                        {
+                            "id": "ae757dcc12d5431fbf060c1d791b413e430e8aca",
+                            "name": "Test team",
+                            "step_count": 0,
+                            "created": 1715295824,
+                            "updated": 1715295824
+                        },
+                        {
+                            "id": "800c4f06609b46569df8d29774db4a553b2c70a3",
+                            "name": "Test team",
+                            "step_count": 0,
+                            "created": 1715295825,
+                            "updated": 1715295825
+                        }
+                    ],
+                    "meta": {
+                        "pagination": {
+                            "total": 50,
+                            "count": 10,
+                            "per_page": 15,
+                            "current_page": 2,
+                            "total_pages": 5,
+                            "links": {
+                                "next": "https://localhost/teams?per_page=10&page=3",
+                                "previous": "https://localhost/teams?per_page=10&page=1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

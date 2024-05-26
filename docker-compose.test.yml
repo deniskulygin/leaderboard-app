@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  mysql_test:
+    container_name: mysql_test
+    image: mysql:8.0.28-oracle
+    command: --sql-mode="" --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+      MYSQL_PASSWORD: "${DB_PASSWORD}"
+      MYSQL_DATABASE: "${DB_DATABASE}"
+    volumes:
+      - ./docker/config/mysql:/etc/mysql/conf.d
+    ports:
+      - 8083:3306

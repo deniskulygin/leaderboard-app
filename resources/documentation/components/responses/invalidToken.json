@@ -1,0 +1,18 @@
+{
+  "description": "Request with any of cases:\n- invalid token of user\n- expired token of user\n- empty header\n- authorization = null\n- authorization without value\n",
+  "content": {
+    "application/json": {
+      "example": {
+          "message": "Unauthenticated."
+      },
+      "schema": {
+          "type": "object",
+          "properties": {
+              "message": {
+                  "type": "string"
+              }
+          }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "summary": "Delete user`s team",
+    "description": "This endpoint allows to delete a user team",
+    "tags": [
+        "Team"
+    ],
+    "parameters": [
+        {
+            "$ref": "../../components/parameters/teamUniqueId.json"
+        }
+    ],
+    "responses": {
+        "204": {
+            "description": "User`s team has been deleted successfully"
+        },
+        "401": {
+            "$ref": "../../components/responses/invalidToken.json"
+        },
+        "x-400(1)": {
+            "$ref": "../../components/responses/teams/teamNotFound.json"
+        },
+        "x-400(2)": {
+            "description": "Request from use who is not team admin",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "errors": {
+                            "message": "User is not team admin"
+                        }
+                    },
+                    "schema": {
+                        "$ref": "../../components/schemas/badRequest.json"
+                    }
+                }
+            }
+        }
+    }
+}

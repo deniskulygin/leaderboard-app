@@ -1,0 +1,51 @@
+{
+    "description": "Success response",
+    "content": {
+        "application/json": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "Activity unique ID"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "Team name"
+                                },
+                                "step_count": {
+                                    "type": "integer",
+                                    "description": "Total team users` steps count"
+                                },
+                                "created": {
+                                    "type": "integer",
+                                    "description": "Timestamp when team was created"
+                                },
+                                "updated": {
+                                    "type": "integer",
+                                    "description": "Timestamp when team was updated"
+                                }
+                            }
+                        }
+                    }
+                },
+                "example": {
+                    "data": [
+                        {
+                            "id": "88d2ecf7f97b4a98be0f31ecb23138cc91ee2535",
+                            "name": "Test team",
+                            "step_count": 12004,
+                            "created": 1714343894,
+                            "updated": 1714343894
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

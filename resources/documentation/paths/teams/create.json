@@ -1,0 +1,107 @@
+{
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "summary": "Create a team",
+    "description": "This endpoint allows to create a user team",
+    "tags": [
+        "Team"
+    ],
+    "requestBody": {
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "example": "Team name"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "responses": {
+        "201": {
+            "description": "Team has been created successfully",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "data": {
+                            "id": "88d2ecf7f97b4a98be0f31ecb23138cc91ee2535"
+                        }
+                    },
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "data": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "description": "Unique id of the team"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "401": {
+            "$ref": "../../components/responses/invalidToken.json"
+        },
+        "x-422(1)": {
+            "description": "Request without name field",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "errors": {
+                            "message": "Field name is required"
+                        }
+                    },
+                    "schema": {
+                        "$ref": "../../components/schemas/badRequest.json"
+                    }
+                }
+            }
+        },
+        "x-422(2)": {
+            "description": "Request without incorrect name field type",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "errors": {
+                            "message": "Field name must be a string"
+                        }
+                    },
+                    "schema": {
+                        "$ref": "../../components/schemas/badRequest.json"
+                    }
+                }
+            }
+        },
+        "x-422(3)": {
+            "description": "Request with too long name field",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "errors": {
+                            "message": "Field name cannot be longer than 40 characters"
+                        }
+                    },
+                    "schema": {
+                        "$ref": "../../components/schemas/badRequest.json"
+                    }
+                }
+            }
+        }
+    }
+}

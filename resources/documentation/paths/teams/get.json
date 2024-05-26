@@ -1,0 +1,43 @@
+{
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "summary": "Get user`s team",
+    "description": "This endpoint allows to get a user team",
+    "tags": [
+        "Team"
+    ],
+    "parameters": [
+        {
+            "$ref": "../../components/parameters/teamUniqueId.json"
+        }
+    ],
+    "responses": {
+        "200": {
+            "$ref": "../../components/responses/teams/team.json"
+        },
+        "401": {
+            "$ref": "../../components/responses/invalidToken.json"
+        },
+        "x-400(1)": {
+            "$ref": "../../components/responses/teams/teamNotFound.json"
+        },
+        "x-400(2)": {
+            "description": "Request with team where user is not a member",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "errors": {
+                            "message": "User is not part of the team"
+                        }
+                    },
+                    "schema": {
+                        "$ref": "../../components/schemas/badRequest.json"
+                    }
+                }
+            }
+        }
+    }
+}

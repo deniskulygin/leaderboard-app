@@ -1,0 +1,3 @@
+[mysqld]
+max_allowed_packet=134217728
+net_buffer_length=16384

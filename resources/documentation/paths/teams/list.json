@@ -1,0 +1,40 @@
+{
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ],
+    "summary": "Get a list of user`s teams",
+    "description": "This endpoint allows to get a list of user teams",
+    "tags": [
+        "Team"
+    ],
+    "parameters": [
+        {
+            "$ref": "../../components/parameters/perPageQuery.json"
+        }
+    ],
+    "responses": {
+        "200": {
+            "$ref": "../../components/responses/teams/teams.json"
+        },
+        "401": {
+            "$ref": "../../components/responses/invalidToken.json"
+        },
+        "400": {
+            "description": "Request with incorrect `per_page` parameter type",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "errors": {
+                            "message": "per_page must be a digit from 1 to 100"
+                        }
+                    },
+                    "schema": {
+                        "$ref": "../../components/schemas/badRequest.json"
+                    }
+                }
+            }
+        }
+    }
+}

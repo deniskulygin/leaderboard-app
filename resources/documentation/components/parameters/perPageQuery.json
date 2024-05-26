@@ -1,0 +1,10 @@
+{
+  "name": "per_page",
+  "in": "query",
+  "description": "Number of items per page",
+  "required": false,
+  "schema": {
+    "type": "integer",
+    "default": 20
+  }
+}

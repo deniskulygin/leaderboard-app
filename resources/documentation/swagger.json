@@ -1,0 +1,39 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Leader Board",
+        "version": "1.0",
+        "description": "User steps tracking withing the team"
+    },
+    "servers": [
+        {
+            "url": "localhost"
+        }
+    ],
+    "paths": {
+        "/teams": {
+            "get": {
+                "$ref": "./paths/teams/list.json"
+            },
+            "post": {
+                "$ref": "./paths/teams/create.json"
+            }
+        },
+        "/teams/{teamUniqueId}": {
+            "get": {
+                "$ref": "./paths/teams/get.json"
+            },
+            "delete": {
+                "$ref": "./paths/teams/delete.json"
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    }
+}

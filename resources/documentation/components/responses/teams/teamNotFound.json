@@ -1,0 +1,18 @@
+{
+    "description": "Request with not existed team id",
+    "content": {
+        "application/json": {
+            "example": {
+                "message": "Team not found"
+            },
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
